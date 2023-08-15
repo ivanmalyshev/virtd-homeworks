@@ -150,6 +150,6 @@ vagrant@server1:~$ docker -v
 Docker version 24.0.5, build ced0996
 vagrant@server1:~$ 
 ```
-
+![alt_text](https://github.com/ivanmalyshev/virtd-homeworks/blob/main/05-virt-02-iaac/step4.png)
 
 
