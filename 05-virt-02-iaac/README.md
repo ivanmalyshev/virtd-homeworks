@@ -124,3 +124,32 @@ Error: The requested URL returned error: 404:
 
 *Приложите скриншоты в качестве решения на эту задачу.*
 
+```
+mid@midserv:~/vagrant/05-virt/vagrant$ vagrant ssh
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.4.0-135-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue 15 Aug 2023 07:42:39 PM UTC
+
+  System load:  0.92               Users logged in:          0
+  Usage of /:   13.2% of 30.34GB   IPv4 address for docker0: 172.17.0.1
+  Memory usage: 9%                 IPv4 address for eth0:    10.0.2.15
+  Swap usage:   0%                 IPv4 address for eth1:    192.168.56.11
+  Processes:    153
+
+
+This system is built by the Bento project by Chef Software
+More information can be found at https://github.com/chef/bento
+Last login: Tue Aug 15 19:42:17 2023 from 10.0.2.2
+vagrant@server1:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+vagrant@server1:~$ docker -v
+Docker version 24.0.5, build ced0996
+vagrant@server1:~$ 
+```
+
+
+
