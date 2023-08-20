@@ -1,0 +1,33 @@
+{
+    "builders": [
+      {
+        "type":      "yandex",
+        "token":     "y0_AgAAAABwMDO1AATuwQAAAADqpYQjll_ULw8ETiS9M-yKDwnWv-N6ZYs",
+        "folder_id": "b1g3lvs2irirrcnca5j5",
+        "zone":      "ru-central1-a",
+  
+        "image_name":        "debian-11-nginx-{{isotime | clean_resource_name}}",
+        "image_family":      "debian-web-server",
+        "image_description": "my custom debian with nginx",
+  
+        "source_image_family": "debian-11",
+        "subnet_id":           "e9bv9jqfe4v9mj71to38",
+        "use_ipv4_nat":        true,
+        "disk_type":           "network-ssd",
+        "ssh_username":        "debian"
+      }
+    ],
+    "provisioners": [
+      {
+        "type": "shell",
+        "inline": [
+          "echo 'updating APT'",
+          "sudo apt-get update -y",
+          "sudo apt-get install -y nginx",
+          "sudo su -",
+          "sudo systemctl enable nginx.service",
+          "curl localhost"
+        ]
+      }
+    ]
+  }
