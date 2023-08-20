@@ -28,6 +28,14 @@
 
 Чтобы получить зачёт, вам нужно предоставить скриншот страницы с созданным образом из личного кабинета YandexCloud.
 
+---
+
+### Ответ
+
+![alt_text](https://github.com/ivanmalyshev/virtd-homeworks/blob/main/05-virt-04-docker-compose/src/create_iso.png)
+
+[ссылка на json образа](https://github.com/ivanmalyshev/virtd-homeworks/blob/main/05-virt-04-docker-compose/image.json)
+
 ## Задача 2
 
 **2.1.** Создайте вашу первую виртуальную машину в YandexCloud с помощью web-интерфейса YandexCloud.        
@@ -37,6 +45,41 @@
 Используйте Terraform-код в директории ([src/terraform](https://github.com/netology-group/virt-homeworks/tree/virt-11/05-virt-04-docker-compose/src/terraform)).
 
 Чтобы получить зачёт, вам нужно предоставить вывод команды terraform apply и страницы свойств, созданной ВМ из личного кабинета YandexCloud.
+
+
+### Ответ
+
+```
+yc config list
+token: y0_AgAAAABwMDO1AATuwQAAAADqpYQjll_ULw8ETiS9M-yKDwnWv-N6ZYs
+cloud-id: b1ggt7dn42l7chn96p5q
+folder-id: b1g3lvs2irirrcnca5j5
+
+yc compute image list
++----------------------+--------------------------------------+-------------------+----------------------+--------+
+|          ID          |                 NAME                 |      FAMILY       |     PRODUCT IDS      | STATUS |
++----------------------+--------------------------------------+-------------------+----------------------+--------+
+| fd86hovj08rkep2k7q2q | debian-11-nginx-2023-08-20t07-34-53z | debian-web-server | f2e1eht8hm1mgq4fmk1k | READY  |
++----------------------+--------------------------------------+-------------------+----------------------+--------+
+
+```
+
+Соответствующие изменения в файлы .tf внес. 
+
+Сгенерировал json.key для сервисного аккаунта
+
+```
+yc iam key create --service-account-name imalyshev94 --output key.json --folder-id b1g3lvs2irirrcnca5j5
+id: aje10fnjvals9hr1hc96
+service_account_id: ajeh48fkgpbljdjbt0nv
+created_at: "2023-08-20T08:03:27.143542388Z"
+key_algorithm: RSA_2048
+```
+
+![alt_text](https://github.com/ivanmalyshev/virtd-homeworks/blob/main/05-virt-04-docker-compose/src/terraform_plan.png)
+
+![alt_text](https://github.com/ivanmalyshev/virtd-homeworks/blob/main/05-virt-04-docker-compose/src/terraform_apply.png)
+
 
 ## Задача 3
 
