@@ -88,6 +88,21 @@ key_algorithm: RSA_2048
 
 Чтобы получить зачёт, вам нужно предоставить вывод команды "docker ps" , все контейнеры, описанные в [docker-compose](https://github.com/netology-group/virt-homeworks/blob/virt-11/05-virt-04-docker-compose/src/ansible/stack/docker-compose.yaml),  должны быть в статусе "Up".
 
+### Ответ
+
+```
+debian@node01:~$ sudo docker ps
+CONTAINER ID   IMAGE                              COMMAND                  CREATED          STATUS                             PORTS                                                                              NAMES
+e0665e2adff6   grafana/grafana:7.4.2              "/run.sh"                25 seconds ago   Up 12 seconds                      3000/tcp                                                                           grafana
+744549ca1981   gcr.io/cadvisor/cadvisor:v0.47.0   "/usr/bin/cadvisor -…"   25 seconds ago   Up 12 seconds (health: starting)   8080/tcp                                                                           cadvisor
+ce5cefdc3701   prom/node-exporter:v0.18.1         "/bin/node_exporter …"   25 seconds ago   Up 12 seconds                      9100/tcp                                                                           nodeexporter
+4ff6ba6c637e   stefanprodan/caddy                 "/sbin/tini -- caddy…"   25 seconds ago   Up 12 seconds                      0.0.0.0:3000->3000/tcp, 0.0.0.0:9090-9091->9090-9091/tcp, 0.0.0.0:9093->9093/tcp   caddy
+2a0025c03a3f   prom/prometheus:v2.17.1            "/bin/prometheus --c…"   25 seconds ago   Up 12 seconds                      9090/tcp                                                                           prometheus
+3284a8218e97   prom/alertmanager:v0.20.0          "/bin/alertmanager -…"   25 seconds ago   Up 12 seconds                      9093/tcp                                                                           alertmanager
+481d2814ade1   prom/pushgateway:v1.2.0            "/bin/pushgateway"       25 seconds ago   Up 12 seconds                      9091/tcp                                                                           pushgateway
+debian@node01:~$ 
+```
+
 ## Задача 4
 
 1. Откройте веб-браузер, зайдите на страницу http://<внешний_ip_адрес_вашей_ВМ>:3000.
@@ -101,6 +116,11 @@ key_algorithm: RSA_2048
 <p align="center">
   <img width="1200" height="600" src="./assets/yc_02.png">
 </p>
+
+
+### Ответ
+
+![alt_text](https://github.com/ivanmalyshev/virtd-homeworks/blob/main/05-virt-04-docker-compose/src/install_stack.png)
 
 ## Задача 5 (*)
 
